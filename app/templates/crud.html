@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block title %}CRUD{% endblock title %}
+
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">Relational Databases</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse position-absolute end-0 me-5" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">CRUD</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="text-light bg-success">
+    <div class="container">
+        <h1>CRUD</h1>
+    </div>
+</div>
+
+<div class="container">
+    <h3>What is CRUD?</h3>
+    <hr style="border-top: 3px solid #bbb">
+    <p>CRUD is an acronym for <i>Create, Read, Update and Delete</i>, and refers to four functions that are necessary for implementing a persistent storage application and are inherent for relational databases, persistent storage refers to data storage that <u>still</u> exists even after the device was powered off.</p>
+    
+    <h3>CREATE</h3>
+    <hr style="border-top: 3px solid #bbb">
+    <p>The create function allows us to make new records to store in a database. Records in relational databases are represented as rows in a table.</p>
+    <p>In SQL we create new records by using <span class="font-monospace">INSERT</span>, declaring the table in which we're inserting and defining the <span class="font-monospace">VALUES</span> of the new record.</p>
+    <p class="font-monospace">INSERT INTO client (id, first_name, last_name, age) VALUES (1, "Jorge", "Tostado", 21);</p>
+
+    <h3>READ</h3>
+    <hr style="border-top: 3px solid #bbb">
+    <p>The read function is searching for specific records inside the database, we can filter using certain criteria and show only specific data of the record through the query.</p>
+    <p>We read by using <span class="font-monospace">SELECT</span>, specifying the data to show by naming it (if all then we use *), naming the table we're searching and finally naming the criteria we're looking for.</p>
+    <p class="font-monospace">SELECT * FROM client WHERE id=1;</p>
+
+    <h3>UPDATE</h3>
+    <hr style="border-top: 3px solid #bbb">
+    <p>The update function is changing the values of existing records within the database.</p>
+    <p>For updating we use <span class="font-monospace">UPDATE</span> in the table of the record we're updating, <span class="font-monospace">SET</span> the new values of the record <span class="font-monospace">WHERE</span> the criteria matches.</p>
+    <p class="font-monospace">UPDATE TABLE client SET age=22 WHERE id=1;</p>
+
+    <h3>DELETE</h3>
+    <hr style="border-top: 3px solid #bbb">
+    <p>The delete function means erasing records from our database, some databases perform a hard delete which erases all data and no longer retrievable, while other perform a soft delete which removes the record from the table but keeps the data present and intact.</p>
+    <p>Use <span class="font-monospace">DELETE</span> on the table we want to delete from and <u>VERY IMPORTANT</u> to specify the criteria of the records we want to delete.</p>
+    <p class="font-monospace">DELETE FROM client WHERE id=1;</p>
+
+    <h3>SCAN</h3>
+    <hr style="border-top: 3px solid #bbb">
+    <p>The scan function refers to looking through all records of a table in the database, much like READ but we don't specify criteria to filter through.</p>
+    <p class="font-monospace">SELECT * FROM client;</p>
+</div>
+{% endblock content %}

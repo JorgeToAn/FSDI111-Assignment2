@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Relational Databases</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse position-absolute end-0 me-5" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/crud">CRUD</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="text-light bg-success">
+    <div class="container">
+        <h1>Home</h1>
+    </div>
+</div>
+
+<div class="container">
+    <h3>What is a database?</h3>
+    <hr style="border-top: 3px solid #bbb">
+    <p>A database is a collection of structured data that is stored in a computer, which is managed by a <i>Database Management System</i> (DBS), together they are named as a database.</p>
+    <p>Nowadays there are many types of databases, but we can mention two very important types that are mostly used all over the world: relational databases and nonrelational or NoSQL databases.</p>
+    
+    <h3>Relational Databases</h3>
+    <hr style="border-top: 3px solid #bbb">
+    <p>Relational databases are a type of database that use the relational model for structuring data into tables which are made of columns and rows, most of them use <i>Structured Query Language</i> (SQL).</p>
+    <p>You must first define the way you will store your data, this means you need to specify the tables and the structure of them before you can start storing data, which is a lot more restrictive.</p>
+    <p>SQL databases are good for multi-row transactions and are highly scalable.</p>
+    <p>These kinds of databases offer the most flexibility for accessing structured information.</p>
+    <p>Examples of SQL DBMS include MySQL, MariaDB, Oracle, PostgreSQL and MSSQL.</p>
+
+    <h3>Nonrelational or NoSQL Databases</h3>
+    <hr style="border-top: 3px solid #bbb">
+    <p>As the name implies, these type of databases <u>don't</u> use SQL to store and manipulate data, this means that the data stored is unstructured and/or semistructured. Data storage is a lot more flexible as it can use column-oriented, document-oriented, graph-based or Key-Value schemas to store it.</p>
+    <p>The types of queries you can make with NoSQL databases can't be too complicated unlike SQL databases.</p>
+    <p>Examples of NoSQL DBMS include MongoDB, Reddis, Cassandra, Elasticsearch and Firebase.</p>
+</div>
+{% endblock content %}
